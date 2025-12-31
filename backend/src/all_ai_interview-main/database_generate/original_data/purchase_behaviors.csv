@@ -1,0 +1,26 @@
+﻿interview_id,purchase_location,purchase_frequency,typical_package_size,price_sensitivity,brand_loyalty,primary_decision_factor,willing_to_pay_premium,bulk_buyer,online_vs_offline,notes,created_at
+P1,,,,High,,,,False,,,2025-12-12T18:50:42.174478
+P2,"Shopee, Lotus",,,High,,,,True,Mixed,,2025-12-12T18:50:42.174478
+P3,Makro,,,High,,,,True,Mixed,,2025-12-12T18:50:42.175493
+P4,"7-11, Shopee",,,High,,,,False,Mixed,,2025-12-12T18:50:42.176496
+P5,,,,High,,,,False,,,2025-12-12T18:50:42.176496
+P6,,,,High,,,,True,,,2025-12-12T18:50:42.177493
+P7,,,,Medium,,,,False,,,2025-12-12T18:50:42.178504
+P8,,,,High,,,,False,,,2025-12-12T18:50:42.178504
+P9,,,,High,,,,False,,,2025-12-12T18:50:42.179502
+P10,,,,Medium,,,,False,,,2025-12-12T18:50:42.179502
+P11,,,,High,,,,True,,,2025-12-12T18:50:42.179502
+P12,Makro,,,Medium,,,,False,Mixed,,2025-12-12T18:50:42.181084
+P13,,,,Medium,,,,False,,,2025-12-12T18:50:42.181588
+P14,,,,High,,,,False,,,2025-12-12T18:50:42.182647
+P15,,,,Medium,,,,False,,,2025-12-12T18:50:42.183160
+P16,,,,High,,,,False,,,2025-12-12T18:50:42.183670
+P17,Makro,,,High,,,,True,Mixed,,2025-12-12T18:50:42.183670
+P18,Makro,,,High,,,,True,Mixed,,2025-12-12T18:50:42.184677
+P19,,,,Medium,,,,False,,,2025-12-12T18:50:42.185675
+P20,,,,High,,,,True,,,2025-12-12T18:50:42.185675
+P21,,,,High,,,,False,,,2025-12-12T18:50:42.186675
+P22,7-11,,,High,,,,False,Mixed,,2025-12-12T18:50:42.186675
+P23,,,,Medium,,,,False,,,2025-12-12T18:50:42.186675
+P24,Makro,,,High,,,,True,Mixed,,2025-12-12T18:50:42.188179
+P25,,,,Medium,,,,False,,,2025-12-12T18:50:42.188179

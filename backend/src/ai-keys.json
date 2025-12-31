@@ -1,0 +1,28 @@
+{
+  "keys": {
+    "openai": "{\"iv\":\"a361b072f5599d6d06d39de0e9fb5e2f\",\"authTag\":\"0032fe3221b7adced334a56f3d664e52\",\"encrypted\":\"e3dc689c86018ba88032a84ac8f5670a7f907809a8921d81e91df2e6a98a2d8208503606212658a958f2d6f2e04a3428459a886bdc479b910c35230aee6c39c4569dd02998e0fdebb0c749ade8291aef4a1343051e48a7b6e4537feacfff048317b6d96d0208bff1ddc88cf1e3345a86a2f071dfa253979d81272687baaf605636cf21cee778651df56457f61ea59537df454037d7c9496957b67d0855ebd6ed601f280e\"}"
+  },
+  "models": [
+    {
+      "id": "gpt-4o-mini",
+      "name": "GPT-4o Mini",
+      "provider": "openai"
+    },
+    {
+      "id": "gpt-4o",
+      "name": "GPT-4o",
+      "provider": "openai"
+    },
+    {
+      "id": "gpt-4-turbo",
+      "name": "GPT-4 Turbo",
+      "provider": "openai"
+    },
+    {
+      "id": "gpt-3.5-turbo",
+      "name": "GPT-3.5 Turbo",
+      "provider": "openai"
+    }
+  ],
+  "activeModel": "gpt-4o-mini"
+}

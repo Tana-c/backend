@@ -1,0 +1,43 @@
+version: '3.8'
+
+# Docker Compose using pre-built images
+# This file requires NO source code - only images and database file
+# 
+# Prerequisites on server:
+# 1. Docker images loaded: ai-interviewer-backend:latest, ai-interviewer-frontend:latest
+# 2. Database file: ./database/interview_data.db
+# 3. Environment file: .env (with OPENAI_API_KEY)
+#
+# No git clone or source code needed!
+
+services:
+  backend:
+    image: ai-interviewer-backend:latest
+    container_name: ai-interviewer-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - OPENAI_MODEL=${OPENAI_MODEL:-gpt-4o}
+      - OPENAI_TEMPERATURE=${OPENAI_TEMPERATURE:-0.1}
+    volumes:
+      # Only mount database file - no source code needed
+      - ./database/interview_data.db:/app/interview_data.db:ro
+    networks:
+      - ai-interviewer-network
+    restart: unless-stopped
+
+  frontend:
+    image: ai-interviewer-frontend:latest
+    container_name: ai-interviewer-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - ai-interviewer-network
+    restart: unless-stopped
+
+networks:
+  ai-interviewer-network:
+    driver: bridge

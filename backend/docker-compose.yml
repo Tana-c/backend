@@ -1,0 +1,44 @@
+services:
+  app:
+    image: tanac/interview:0.9.17
+    container_name: ai-interviewer
+    network_mode: host  # Use host network to access PostgreSQL on host
+    restart: unless-stopped
+    depends_on:
+      - demo-api
+    environment:
+      - NODE_ENV=production
+      - PORT=7183
+      - HOST=0.0.0.0
+      # Database configuration (ใช้ DATABASE_URL หรือ individual settings)
+      - DATABASE_URL=postgresql://postgres:postgres123@localhost:5433/interview_db
+      # หรือใช้ individual settings แทน:
+      # - DB_HOST=localhost
+      # - DB_PORT=5433
+      # - DB_USER=postgres
+      # - DB_PASSWORD=postgres123
+      # - DB_NAME=interview_db
+      # Demo API (FastAPI service) - ใช้ localhost เพราะใช้ host network
+      - DEMO_API_URL=http://localhost:8000
+
+  demo-api:
+    # ใช้ build context จาก backend directory
+    build:
+      context: .
+      dockerfile: ./src/all_ai_interview-main/database_generate/Dockerfile.prod
+    container_name: demo-api
+    network_mode: host  # Use host network to access database files on host
+    restart: unless-stopped
+    working_dir: /app
+    volumes:
+      # Mount database file and data directory
+      # ใช้ path จาก backend directory (relative to docker-compose.yml location)
+      - ./src/all_ai_interview-main/database_generate:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+      # OpenAI API key (optional - can be set via .env or environment)
+      # - OPENAI_API_KEY=${OPENAI_API_KEY}
+      # - OPENAI_MODEL=gpt-4o-mini
+    # Expose port 8000 (using host network, so this is just documentation)
+    # Port 8000 will be accessible on localhost:8000
+
